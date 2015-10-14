@@ -1,0 +1,32 @@
+﻿@media print {
+  body 
+  {
+      padding: 40px 20px;
+  }
+  .btn 
+  {
+      display:none;
+  }
+  .pull-right.nqinfo
+  {
+      display: none;
+  }
+  .medbox
+  {
+      background-color: RGB(65, 158, 147);
+  }
+  #current, #conventional, #alternative, #clinical, #blog
+  {
+      page-break-before:always;
+      page-break-after: avoid;
+      
+  }
+  div.container div
+  {
+      page-break-inside: avoid;
+  }
+  #blog
+  {
+      page-break-after: avoid;
+  }
+}

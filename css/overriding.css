@@ -1,0 +1,142 @@
+﻿body {font-family: 'Open Sans', sans-serif;}		
+		.navbar-nav>li>a {line-height: 50px; color: #626262;}
+		.navbar-nav {margin: 30px -15px; background-color: #E0E0E0;}
+		.navbar {margin-bottom: 0}
+				
+		.navbar-toggle {margin-top: 20px; background-color: #a8d22f;}
+		.navbar-brand {padding-top: 15px;}
+		
+		.navbar-toggle .icon-bar {background-color: white;}
+		
+		/*BOXES*/
+		.nqbox {color: #FFFFFF; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;padding: 20px; margin: 10px 0}
+		.nqbox h2 {font-size:24px; margin-top:0px}
+		.nqbox p,  .nqbox li{font-size:14px}
+		.nqbox a {color: #fdd000}
+		.nqinfo {margin-right:-15px; margin-top:-15px}
+		
+		.nqhbox {padding: 20px 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; background-color: #f3f3f3; border: solid 1px #dadada; margin:20px 0}
+		
+		/*BLOG*/
+		.nq-entry p, .nq-entry .btn {font-size:14px}
+		
+		/* TOP */
+		.nqtop {padding-top: 60px}
+		.nqtop a{color: #FFFFFF; font-size: 24px; line-height: 26px; font-weight: 300}
+		.nqtop a:hover{font-size: 22px; text-decoration:none}
+		
+		.nq-top-btn {padding: 10px}
+		.nq-top-btn button {margin: 10px 0; font-size: 18px}
+		.nq-top-btn button img{float: left}
+		.nq-top-btn a:hover {text-decoration: none;}
+		.nq-top-btn button:hover {font-size: 19px}
+		
+		.pagination>li>a, .pagination>li>span {color: #fff;	background-color: #63a3c5; border: none; font-size: 14px}
+		
+		/* Small devices (tablets, 768px and up) */
+		@media (min-width: 768px){
+			.navbar-nav {margin: 0; background-color: #FFFFFF!important; height:80px;
+			.navbar-brand {padding-top: 25px!important;}			
+		}
+		
+		/* Small devices (tablets, 768px and up) */
+		@media (min-width: @screen-sm-min) {
+			.navbar-nav>li>a {line-height: 80px!important;}
+}
+div.col-md-4.doctor-thumbnails-names p
+{
+    padding: 0px;
+    font-size:large;
+    color:Black;
+}
+div.col-md-4.doctor-thumbnails-desc p
+{
+    padding: 0px 50px;
+    color:Black;
+}
+div.doctor-thumbnails-title p
+{
+    font-size:x-large;
+    color: RGB(60,60,60);
+}
+img.eXit
+{
+    cursor:pointer;
+}
+ul.medbox-hide-text
+{
+    display: none;
+}
+a
+{
+    cursor: pointer;
+}
+div.medbox div.nqbox
+{
+    height: 360px;
+}
+p.med-aka
+{
+    height: 18%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p.med-desc
+{
+    height: 17%;
+}
+ul.med-ul
+{
+    height: 8%;
+}
+span.doc-discipline
+{
+    font-size: 0.85em ;
+    color:Olive;
+}
+@media (min-width: 768px) {
+    .col-md-2, .col-md-3, .col-md-4, .col-md-12
+    {
+        font-size:smaller;
+    }
+    #regContainer input
+    {
+        width: 150px;
+    }
+}
+.tooltip
+{
+    width: 800px;
+}
+#regContainer div.row
+{
+    margin-top:15px;
+}
+#regContainer label
+{
+    font-size: 1.3em;
+}
+#regContainer input:focus
+{
+    box-shadow: 0 0 20px RGB(154,192,37);
+    border: 3px RGB(154,192,37);
+}
+#regContainer input
+{
+    padding:2px;
+    width: 230px;
+}
+#regFooter li
+{
+    display: inline;
+    padding: 0 7px;
+    color: RGB(154,192,37);
+}
+#regFooter a:hover
+{
+    text-decoration: none;
+}
+#navbar ul a:hover
+{
+    color: RGB(154,192,37);
+}  
