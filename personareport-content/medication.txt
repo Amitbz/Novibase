@@ -1,0 +1,29 @@
+﻿Prednisone
+Deltasone, Meticorten, Liquid Pred, Prednisone Intensol, OrasoneMendelson, Deltasone, Meticorten, Liquid Pred, Prednisone Intensol, OrasoneMendelson
+Prednisone is a synthetic corticosteroid drug that is particularly effective as an immunosuppressant drug. It is used to treat certain inflammatory diseases (such as moderate allergic reactions) and (at higher doses) some types of cancer, but has significant adverse effects.
+Increased blood sugar for diabetics,Difficulty controlling emotion,Difficulty in maintaining train of thought,Weight gain,Immunosuppression,Facial swelling,Depression, mania, psychosis, or other psychiatric symptoms,Unusual fatigue or weakness,Mental confusion / indecisiveness,Memory and attention dysfunction (Steroid dementia syndrome),Blurred vision,Abdominal pain,Peptic ulcer,Painful hips or shoulders,Steroid-induced osteoporosis,Stretch marks,Osteonecrosis- same as avascular necrosis,Insomnia,Severe joint pain,Cataracts or glaucoma,Anxiety,Black stool,Stomach pain or bloating,Severe swelling,Mouth sores or dry mouth,Avascular necrosis,Hepatic steatosis
+7.0
+<-->
+Pentasa
+Asacol, Lialda, Salofalk, Rowasa, Apriso
+Mesalazine (INN, BAN), also known as mesalamine (USAN) or 5-aminosalicylic acid (5-ASA), is an anti-inflammatory drug used to treat inflammatory bowel disease, such as ulcerative colitis and mild-to-moderate Crohn's disease. Mesalazine is a bowel-specific aminosalicylate drug that acts locally in the gut and has its predominant actions there, thereby having few systemic side effects.
+Diarrhea,Nausea,Cramping,Flatulence
+6.0
+<-->
+Imuran
+Azathioprine, Azasan, Azamun
+Azathioprine is an immunosuppressive drug used in organ transplantation and autoimmune diseases and belongs to the chemical class of purine analogues. Synthesized originally as a cancer drug and a prodrug for mercaptopurine in 1957, it has been widely used as an immunosuppressant for more than 50 years.
+Nausea and vomiting,dizziness,diarrhea,fatigue,skin rashes,hair loss
+6.0
+<-->
+Remicade
+Infliximab, Remsima, Inflectra
+is a chimeric monoclonal antibody against tumour necrosis factor alpha (TNF-α) used to treat autoimmune diseases.
+Serious infections,Reactivation of Hepatitis B,Reactivation of tubrtculosis,Drug-indiced lupus
+8.0
+<-->
+Humira
+Adalimumab, Exemptia
+Humira is a TNF inhibiting anti-inflammatory medication. Because TNFα is part of the immune system that protects the body from infection, treatment with Humira may increase the risk of infections.
+Serious infections,Tuberculosis,Lymphomia,Solid tissue cancers
+8.0
