@@ -1,4 +1,4 @@
-﻿//In the following lines is set a two-dimentional array of medication, each cell in the array holds another array, that holds the lines of 
+//In the following lines is set a two-dimentional array of medication, each cell in the array holds another array, that holds the lines of 
 //the medication's details as existing in the text file
 var medCabinet = new Array();
 jQuery.get('/personareport-content/medication.txt', function (Medication) {
@@ -40,7 +40,9 @@ window.onLoad = create_report_content()
 //This function opens the report as a string, divides it into sections (also strings), prints the summary section into the page and calls
 //4 other functions to set all the other sections.
 function create_report_content() {
-    jQuery.get('/personareport-content/amit5735-report.txt', function (Report) {
+    var sPageURL = String(window.location);
+    var idu = sPageURL.substring((sPageURL.indexOf("id=")+3), sPageURL.length);
+    jQuery.get('/personareport-content/'+idu+'.txt', function (Report) {
         var sections = Report.split("<-->"),
             overview = sections[0].substring(11, sections[0].length - 2),
             currmedic = sections[1].substring(23, sections[1].length - 2),
@@ -50,8 +52,8 @@ function create_report_content() {
             team = sections[5].substring(20, sections[4].length);
 
         $("#summary div:first-child").append('<p>' + overview + '</p>');
-        set_Currmedic(currmedic, $("#treatHolder"), "myChart");
-        set_Currmedic(consul, $("#convHolder"), "myChart2");
+        set_Currmedic(currmedic, $("#treatHolder"), "myChart", "p");
+        set_Currmedic(consul, $("#convHolder"), "myChart2", "p.col-md-8.pull-left");
         set_Doctor_team(team);
         set_Altboxes(nutalt);
         set_Cliniboxes(clintrials);
@@ -61,11 +63,12 @@ function create_report_content() {
 
 //This function receives 3 parameters: the medication section string, the object into which the HTML will be injected, and the class of
 //the canvas objects. it parses the medicines that need to be displayed, creates an HTML format string and injects it to the object.
-function set_Currmedic(txt, obj, clss) {
+function set_Currmedic(txt, obj, clss, whr) {
     var text = txt.substring(6, txt.indexOf("\r\nMedication")),
-        meds = txt.substring(txt.indexOf("\r\nMedication: ") + 14, txt.length).split(", ");
-        injectHTML = "<p>"+text+"</p>",
-        rating = new Array();
+        meds = txt.substring(txt.indexOf("\r\nMedication: ") + 14, txt.length).split(", "),
+	rating = new Array(),
+	injectHTML = "";
+    obj.find(whr).append(text);
     for (i = 0; i < meds.length; i++) {
         medInfo = get_med_info(meds[i]);
         var medSE = medInfo[3].split(",");
@@ -85,11 +88,11 @@ function set_Currmedic(txt, obj, clss) {
 
         injectHTML += '<div class="col-md-4 col-sm-4"><a class ="pull-right nqinfo"';
         injectHTML += ' href="' + url + '" target="_black"><img src="img/info-icon.png"></a><p class = "col-md-12 col-sm-12" style="text-align: center;">';
-        injectHTML += '<span style="font-size:large;">Patient Satisfaction</span><canvas class="' + clss + ' col-md-12 col-sm-12" height="13%" width="8%" style="left:0px;"></canvas>';
+        injectHTML += '<span style="font-size:medium;">Patient Satisfaction</span><canvas class="' + clss + ' col-md-10 col-sm-12" height="16%" width="7%" style="left:0px;"></canvas>';
         injectHTML += '<p style="text-align:center"></p></p></div></div>';
 
-        injectHTML += '<div class="row"><div class="col-md-12 col-sm-12"><strong>Side effects reported by users</strong>:</p>';
-        injectHTML += sideEffects + '</div></div></div></div>';
+        injectHTML += '<div class="row"><div class="col-md-8 col-sm-8"><p><strong>Side effects reported by users</strong>:</p>';
+        injectHTML += sideEffects + '</div><div class="col-md-4 col-sm-4 pull-right text-center" style="font-size: large; font-weight: 700;">' + medInfo[4] + '/10</div></div></div></div>';
 
         rating.push(medInfo[4]);
     }
@@ -137,6 +140,7 @@ function setCharts(rateArray, cls) {
 }
 
 
+
 //This function  receives a string as a parameter. The string represents a team of doctors suggested to the patient. The function creates an HTML 
 //format string, that contains the suggested team part in the "schedule an appointment" popups. It returns no value.
 function set_Doctor_team(docstring) {
@@ -151,7 +155,7 @@ function set_Doctor_team(docstring) {
             ifleader = '';
             if (name.indexOf(" (leader)") != -1) {
                 name = name.substring(0, name.indexOf(" (leader)"));
-                ifleader = '<div class="col-md-8 col-md-offset-2 col-sm-12" style="text-align: center"><p><button id="doc-btn-' + name + '" type="button" class="btn btn-success btn-lg btn-block">Schedule an Appointment with the Team Leader</button></p></div>';
+                ifleader = '<div class="col-md-8 col-md-offset-2 col-sm-12" style="text-align: center"><p><button id="doc-btn-' + name + '" type="button" class="btn btn-success btn-lg btn-block" onclick="return contswitch();">Schedule an Appointment with the Team Leader</button></p></div>';
             }
             if (i == 0) {
                 injectHTML += '<div class="col-md-4 col-sm-4"><div class="row"><p class = "text-center"><img src="' + imgs[name] + '" /></p></div></div>';
@@ -183,7 +187,7 @@ function set_Other_Doctors(imgs) {
     var convHTML = '<div class="row doctor-thumbnails-title"><div class="col-md-8 col-md-offset-2 text-center">',
         altHTML = '',
         isdivisible = '';
-    convHTML += '<p class="lead text-center" style="display:inline;">Schedule an Appointment With a <span style="color: #63a3c5">Conventional';
+    convHTML += '<p class="lead text-center" style="display:inline;" onclick="contswitch()">Schedule an Appointment With a <span style="color: #63a3c5">Conventional';
     convHTML += '</span> Practitioner Below:</p></div></div><div class="nqbox">';
     for (i = 0; i < 2; i++) {
         var discList = [""];
@@ -216,11 +220,11 @@ function set_Other_Doctors(imgs) {
             convHTML += '<div class="col-md-4 doctor-thumbnails-desc"><div class="row"><p>    ' + pair2[1] + '</p></div></div>';
             convHTML += '<div class="col-md-4 doctor-thumbnails-desc"><div class="row"><p>    ' + pair3[1] + '</p></div></div>';
             convHTML += '</div><div class="row"><div class="col-md-4" style="text-align: center"><button id="doc-btn-' + pair1[0] + '"';
-            convHTML += 'type="button" class="btn btn-success btn-lg btn-block">Schedule an Appointment</button> </div>';
+            convHTML += 'type="button" class="btn btn-success btn-lg btn-block" onclick="contswitch()">Schedule an Appointment</button> </div>';
             convHTML += '<div class="col-md-4" style="text-align: center"><button id="doc-btn-' + pair2[0] + '" type="button"';
-            convHTML += 'class="btn btn-success btn-lg btn-block">Schedule an Appointment</button></div>';
+            convHTML += 'class="btn btn-success btn-lg btn-block" onclick="contswitch()">Schedule an Appointment</button></div>';
             convHTML += '<div class="col-md-4" style="text-align: center"><button id="doc-btn-' + pair3[0] + '" type="button"';
-            convHTML += 'class="btn btn-success btn-lg btn-block">Schedule an Appointment</button></div></div>';
+	    convHTML += 'class="btn btn-success btn-lg btn-block" onclick="contswitch()">Schedule an Appointment</button></div></div>';
         }
         if (remain != 0) {
             convHTML += '<div class="nqbox"><div class="row">';
@@ -247,7 +251,8 @@ function set_Other_Doctors(imgs) {
                     }
                     if (j == 4) {
                         convHTML += '<div class="col-md-4" style="text-align: center"><button id="doc-btn-' + pair[0] + '" type="button"';
-                        convHTML += 'class="btn btn-success btn-lg btn-block">Schedule an Appointment</button></div>';
+                        convHTML += 'class="btn btn-success btn-lg btn-block" onclick="contswitch()">Schedule an Appointment</button></div>';
+
                     }
                 }
                 convHTML += '</div>';

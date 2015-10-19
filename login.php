@@ -34,7 +34,7 @@ session_unset();
         type="text/css">
     <script type="text/javascript" id="cosymantecbfw_removeToolbar">        (function () { var toolbarElement = {}, parent = {}, interval = 0, retryCount = 0, isRemoved = false; if (window.location.protocol === 'file:') { interval = window.setInterval(function () { toolbarElement = document.getElementById('coFrameDiv'); if (toolbarElement) { parent = toolbarElement.parentNode; if (parent) { parent.removeChild(toolbarElement); isRemoved = true; if (document.body && document.body.style) { document.body.style.setProperty('margin-top', '0px', 'important'); } } } retryCount += 1; if (retryCount > 10 || isRemoved) { window.clearInterval(interval); } }, 10); } })();</script>
 </head>
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden; height: 100%;">
     <!-- Navbar -->
     <div class="container">
         <div class="row">
@@ -61,9 +61,8 @@ session_unset();
             </nav>
         </div>
     </div>
-    <div class="row" style="background-size: 100% 150px; background-image: url('http://www.noviqr.eu/RegImgs/signup-wallpaper.jpg');
-        background-repeat: no-repeat">
-        <div class="container" style="height: 150px">
+   <div class="row" style="background-size: 100% 130px; background: url('/img/novislide.png') no-repeat center;">
+        <div class="container" style="height: 130px">
             <div class="row" style="margin-top: 3%;">
                 <div class="col-md-4 text-primary col-md-offset-4">
                     <p class="text-center" style="font-weight: 700; font-family: @Adobe Gothic Std B;
@@ -73,34 +72,34 @@ session_unset();
             </div>
         </div>
     </div>
-    <div class="row" style="padding: 10px 0; background-color: RGB(250,250,250); min-height: 45%;">
+    <div class="row" style="padding: 10px 0; background-color: RGB(250,250,250); min-height: 52%;">
         <div class="container" id="regContainer">
             <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 text-center" id="login-errors" style="display:none;">
                 
             </div>
             <div class="row">
                 <form method="post" onsubmit="return loginCheck()" action="NoviLogin.php">
-            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-2 col-sm-6 col-xs-4">
-                        <label>
-                            Username:</label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-8 col-md-offset-1">
+            <div id = "nuisance" class="col-md-5 col-md-offset-1 col-sm-6  col-xs-12" style="margin-top: 20px;">
+                 <div class="row">
+                        <div class="col-md-2 ">
+                            <label>
+                                Username:</label>
+                        </div>
+                       <div class="col-md-3 col-sm-6 col-xs-8 col-md-offset-2">
                         <input type="text" placeholder="Username" required="required" id="Username" name="Username" autocomplete="on" autofocus="autofocus"/>
                     </div>
-                </div>
+				</div>
                 <div class="row">
-                    <div class="col-md-3 col-md-offset-2 col-sm-6 col-xs-4">
+                    <div class="col-md-2">
                         <label>
                             Password:</label>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-8 col-md-offset-1">
+                    <div class="col-md-3 col-sm-6 col-xs-8 col-md-offset-2">
                         <input type="password" required="required" id="Password" placeholder="Password" name="Password" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 col-md-offset-2 col-sm-3 col-sm-offset-0 col-xs-3 col-xs-offset-4">
+                    <div class="col-md-2 col-sm-3">
                         <input type="submit" value="Sign In" style="line-height: 0;padding: 0;height: 35px; width: 130px; background-color: RGB(165,208,40);
                             color: White; font-weight: 800; font-family: @Adobe Gothic Std B; font-size: 1.45em;
                             border: 2px solid RGB(183,220,69); border-radius: 1px;" />
@@ -108,16 +107,18 @@ session_unset();
                 </div>
             </div>
             </form>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2" style ="background-image:url('http://www.noviqr.eu/img/divider.png'); height:10px; background-size: 100% 100%; padding-top:1.5%"></div>
-                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2 text-center" style="margin-top:1.5%; cursor: pointer;">
-                        <a href="https://account.lab.fiware.org/oauth2/authorize?response_type=token&client_id=4b450e3b981f4b39aaee127c2d2b902c&redirect_uri=http://www.noviqr.eu/callbackserver.php"><img id="FiwareLoginBtn" src="http://www.noviqr.eu/RegImgs/Fi-Ware-Login.png" alt="" /></a>
+            <div class="col-md-6 col-sm-6 pull-right">
+                    <div class="row col-md-10 pull-left">
+                        <p class="lead text-center" style="font-size: medium; color: Black;">
+                            You can also use your Fi-Ware account to log in:</p>
+                        <p class="lead text-center">
+                            <a href="https://account.lab.fiware.org/oauth2/authorize?response_type=token&client_id=4b450e3b981f4b39aaee127c2d2b902c&redirect_uri=http://www.noviqr.eu/callbackserver.php"><img id="FiwareLoginBtn" src="http://www.noviqr.eu/RegImgs/Fi-Ware-Login.png" alt="" /></a></p>
+                    </div>
                 </div>
-            </div>
+			</div>
         </div>
     </div>
-    <div class="row" style="padding: 30px 0; background-color: RGB(235,235,235);" id="regFooter">
+    <div class="row" style="bottom: 0; padding: 15px 0; background-color: RGB(235,235,235);" id="regFooter">
         <div class="text-center col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
             <div class="row">
                 <ul style="list-style-type: none;">

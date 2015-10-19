@@ -32,6 +32,7 @@
 function exit(obj) {
     $("#dimmer").fadeOut("slow");
     $("#convPopup").fadeOut("fast");
+    $("#schedapp").fadeOut("fast");
     $("#altPopup").fadeOut("fast");
     $("html").css("overflow", "auto");
 }
@@ -42,3 +43,24 @@ function change_bg(id) {
     pos = id.substring(3, 4);
     $('#secPic').css({ 'background-image': imgs[pos] });
 };
+
+function contswitch() {
+    var state = $("#altPopup").css("display");
+    if (state == "block") {
+        $("#altPopup").animate({ "width": "toggle", "opacity": "toggle" }, "slow");
+        var dist = $("#schedapp").offset().top;
+        $("#schedapp").css({ "top": dist }).animate({ "width": "toggle", "opacity": "toggle" }, "slow");
+    }
+    else {
+        $("#convPopup").animate({ "width": "toggle", "opacity": "toggle" }, "slow");
+        var dist = $("#schedapp").offset().top;
+        $("#schedapp").css({ "top": dist }).animate({ "width": "toggle", "opacity": "toggle" }, "slow");
+    }
+}
+
+function bringitback() {
+    var hite = $("#altPopup").css("width");
+    $("#schedapp").animate({ "width": "toggle", "opacity": "toggle" }, "slow");
+    var dist = $("#convPopup").offset().top;
+    $("#convPopup").css({ "top": dist }).animate({ "width": "toggle", "opacity": "toggle" }, "slow");
+}

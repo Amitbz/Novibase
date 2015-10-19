@@ -170,10 +170,11 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
     <div id="summary" class="row" style="padding: 30px 0px 0px 0px; margin: 0; background-color: RGB(213, 238, 235)">
         <div class="container">
             <p class="lead">
-                <span style="color: #63a3c5">Overview</span><br />
+                <span style="color: #63a3c5">Overview</span>
                 & info on your <span style="color: #63a3c5">current treatment</span></p>
         </div>
         <br />
+	<br />
         <div class="container">
             <p class="lead">
                 Your current medication:
@@ -182,6 +183,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
     <!-- Current Treatment -->
     <div id="current" class="row" style="padding: 10px 0; margin: 0; background-color: RGB(213, 238, 235)">
         <div class="container" id="treatHolder">
+	<p></p>
         </div>
     </div>
     <!-- Conventional -->
@@ -210,23 +212,55 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding-bottom:35px">
-                <p class="lead pull left col-md-6">
+     	    <div class="row">
+                <p class="lead">
                     <span style="color: #63a3c5">Conventional</span> solutions</p>
-                     <div class="col-md-4 hidden-xs pull-right" style="text-align: center">
+                <div class="row" style="padding-bottom: 40px;">
+                    <p class="col-md-8 pull-left">
+                    </p>
+                    <div class="col-md-4 hidden-xs pull-right" style="text-align: center">
                         <a href="#convApp">
                             <button id="convApp" type="button" class="btn btn-success btn-lg btn-block">
                                 Schedule an Appointment</button></a></div>
-                 <div class="row">
                 </div>
             </div>
         </div>
+	
         <!-- /.container -->
     </div>
     <!-- Alternative -->
     <div id="alternative" class="row" style="padding: 60px 0; background-color: RGB(194, 230, 185);
         margin: 0">
         <div class="container">
+	<div id="schedapp" style="display: none; z-index: 1001; position: absolute; top: 20;">
+                <div class="container">
+                    <div class="nqbox" style="background-color: rgb(240,240,240)">
+                        <div class="row">
+                            <div class="col-md-1 pull-left">
+                                <img src="/img/Back-button.png" alt="" onclick="bringitback()" style="height: 35px;
+                                    width: 35px; cursor: pointer;" />>
+                            </div>
+                            <div class="col-md-6 col-md-offset-2 text-center">
+                                <p class="lead text-center" style="display: inline;">
+                                    Schedule an Appointment:</p>
+                            </div>
+                            <div class="col-md-1 pull-right">
+                                <p class="pull-right">
+                                    <img class="eXit" src="img/exit.png" onclick="exit(this)" alt="" /></p>
+                            </div>
+                        </div>
+                        <div align="center" style="height: 100%; margin: auto;">
+                            <iframe src="//secure.scheduleonce.com/RevitalKariv-noviQr&thm=blue&bc=FE9E0C&tc=000000&dt=&em=1"
+                                id="SOI_RevitalKariv-noviQr" name="ScheduleOnceIframe" scrolling="no" frameborder="0"
+                                hspace="0" marginheight="0" marginwidth="0" height="635px" width="100% !important"
+                                vspace="0" style="max-width: 796px; width: 100% !important; border-radius: 7px;
+                                -webkit-border-radius: 7px;"></iframe>
+                        </div>
+                        <script type="text/javascript" src="//static.scheduleonce.com/mergedjs/ScheduleOnceEmbed.js"></script>
+                        <script type="text/javascript">                            soe.AddEventListners();</script>
+                    </div>
+                </div>
+            </div>
             <div id="altPopup" style="display: none; z-index: 1000; position: absolute; top: 20;">
                 <div class="container">
                     <div class="nqbox" style="background-color: rgb(240, 240, 240)">
@@ -249,19 +283,18 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="row">
-                    <p class="lead">
+           <div class="row">
+                <p class="lead">
                         <span style="color: #63a3c5">Nutritional and Alternative </span>Medicine</p>
-                    <p class="col-md-8"></p>
+                <div class="row">
+                    <p class="col-md-8">
+                    </p>
                     <div class="col-md-4 hidden-xs" style="text-align: center">
                         <a href="#altApp">
                             <button id="altApp" type="button" class="btn btn-success btn-lg btn-block">
                                 Schedule an Appointment</button></a>
                     </div>
                     <br />
-                    <p style="color: #63a3c5" class="col-md-10">
-                        <strong>Option for new treatments</strong>:</p>
                 </div>
             </div>
         </div>
@@ -274,8 +307,6 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
             <div class="row">
                 <p class="lead">
                     <span style="color: #63a3c5">Clinical </span>Trials</p>
-                <p style="color: #63a3c5">
-                    <strong>Option for new treatments</strong>:</p>
             </div>
         </div>
         <!-- /.container -->
@@ -287,59 +318,48 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
                 Report</strong></a></div>
     </div>
     <!-- Wellbeing & Lifestyle -->
-    <div id="blog" class="row" style="padding: 60px 0; background-color: RGB(213, 238, 235);
+      <div id="blog" class="row" style="padding: 60px 0; background-color: RGB(213, 238, 235);
         margin: 0">
         <div class="container">
             <p class="lead">
                 <span style="color: #63a3c5">Wellbeing</span> And <span style="color: #63a3c5">Lifestyle</span></p>
             <p>
-                Etiam consectetur vulputate arcu. Mauris varius nisi eget tincidunt sodales. Maecenas
-                est diam, pellentesque sed maximus sit amet, sollicitudin ac felis. Donec non dapibus
-                enim. Mauris quis tincidunt urna, ac feugiat leo. In ut ex vitae dui luctus mollis
-                non ut lectus. Curabitur hendrerit nunc vitae ipsum consectetur pretium.</p>
+                Here you can find interesting articles and articles relevent to your condition. You are more than welcome to read them through and see what other experts have to say.</p>
             <div class="row" style="padding-top: 20px;">
                 <div class="col-md-4 nq-entry">
-                    <img src="img/image.jpg">
+                    <img src="img/arti1.jpg" style="width: 100%">
                     <h3>
-                        Hello world!</h3>
+                        Complimentary medicine popular across europe</h3>
                     <p>
-                        Etiam consectetur vulputate arcu. Mauris varius nisi eget tincidunt sodales. Maecenas
-                        est diam, pellentesque sed maximus sit amet, sollicitudin ac felis. Donec non dapibus
-                        enim.</p>
+                        Surveys conducted in several European countries have shown a high demand for complementary
+                        and alternative medicine (CAM), as an increasing number of citizens seek relief
+                        for disorders they feel cannot be treated with conventional therapy.</p>
                     <p>
-                        <button type="button" class="btn btn-primary">
-                            Read more</button></p>
+                        <a href="http://www.cordis.europa.eu/news/rcn/35388_en.html" target="_blank"><button type="button" class="btn btn-primary">
+                        Read more</button></a></p>
                 </div>
                 <div class="col-md-4 nq-entry">
-                    <img src="img/image-md.jpg">
+                    <img src="img/arti2.png" style="width: 100%">
                     <h3>
-                        Medicom Welcomes You!</h3>
+                         What is integrative medicine?</h3>
                     <p>
-                        Donec non dapibus enim. Mauris quis tincidunt urna, ac feugiat leo. In ut ex vitae
-                        dui luctus mollis non ut lectus. Curabitur hendrerit nunc vitae ipsum consectetur
-                        pretium.Etiam consectetur vulputate arcu. Mauris varius nisi eget tincidunt sodales.
-                        Maecenas est diam, pellentesque sed maximus sit amet, sollicitudin ac felis. Donec
-                        non dapibus enim.</p>
+                        Join Liz Dawn as she welcomes Dr. Joan Borysenko for a topic that affects everyone
+                        in the world: FOOD and How Changing Food Habits, Changes Your Life. When you’ve
+                        got the right information, you can make powerful choices to change your life with
+                        your food choices.</p>
                     <p>
-                        <button type="button" class="btn btn-primary">
-                            Read more</button></p>
+                        <a href="http://www.joanborysenko.com/2015/04/how-changing-food-habits-changes-your-life-with-dr-joan-borysenko-liz-dawn/" target="_blank"><button type="button" class="btn btn-primary">
+                        Read more</button></a></p>
                 </div>
                 <div class="col-md-4 nq-entry">
-                    <img src="img/image-md.jpg">
+                    <img src="img/arti3.jpg" style="width: 100%">
                     <h3>
-                        Standard Post</h3>
+                        Changing food habits changes your life</h3>
                     <p>
-                        Etiam consectetur vulputate arcu. Mauris varius nisi eget tincidunt sodales. Maecenas
-                        est diam, pellentesque sed maximus sit amet, sollicitudin ac felis. Donec non dapibus
-                        enim.</p>
-                    <p>
-                        Curabitur auctor placerat ex eget interdum. Pellentesque vitae lacus eget est vestibulum
-                        euismod. Etiam hendrerit nibh purus, id dapibus velit ultricies at. Quisque purus
-                        augue, auctor nec ultricies sed, pretium id quam. In pretium pharetra quam et luctus.
-                        Proin sagittis ante et varius varius.</p>
-                    <p>
-                        <button type="button" class="btn btn-primary">
-                            Read more</button></p>
+                        Experts explore new ways to treat the mind, body, and spirit -- all at the same
+                        time.</p>
+                    <a href="http://www.webmd.com/a-to-z-guides/features/alternative-medicine-integrative-medicine" target="_blank"><button type="button" class="btn btn-primary">
+                        Read more</button></a></p>
                 </div>
             </div>
             <!-- /.row -->

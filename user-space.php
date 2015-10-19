@@ -18,8 +18,8 @@
 
             mysql_query("UPDATE Users SET report='1' WHERE email='$eml'");
             mysql_close($conn);
+            fclose($handle);
     }
-    fclose($handle);
 ?>
 
 <html lang="en" hola_ext_inject="disabled">
@@ -49,7 +49,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="http://www.noviqr.com/report/css/overriding.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.noviqr.eu/css/overriding.css" />
     <link rel="stylesheet" type="text/css" href="http://www.noviqr.com/report/css/printStyling.css" />
     <link rel="stylesheet" id="coToolbarStyle" href="chrome-extension://cjabmdjcfcfdmffimndhafhblfmpjdpe/toolbar/styles/placeholder.css"
         type="text/css">
@@ -67,7 +67,7 @@
                             <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
                                 class="icon-bar"></span><span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="htt://www.noviqr.eu/">
                             <img src="http://www.noviqr.com/report/img/noviQr-logo.png"></a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
@@ -80,37 +80,62 @@
             </nav>
         </div>
     </div>
-    <div class="row" style="background-size: 100% 150px; background-image: url('/RegImgs/signup-wallpaper.jpg');
-        background-repeat: no-repeat">
-        <div class="container" style="height: 150px">
+    <div class="row" style="background-size: 100% 130px; background: url('/img/novislide.png') no-repeat center;">
+        <div class="container" style="height: 130px">
             <div class="row" style="margin-top: 3%;">
                 <div class="col-md-4 text-primary col-md-offset-4">
                     <p class="text-center" style="font-weight: 700; font-family: @Adobe Gothic Std B;
                         font-size: 300%; color: RGB(165,208,40)">
-                        YOUR PAGE</p>
+                        My Dashboard</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row" style="min-height: 44%">
+     <div class="row" style="min-height: 44%;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center" style="margin-top: 20px;">
-                    <a href ="" id="aaction"><button id="nextAction"></button></a>
+                <div class="col-md-12" style="padding: 35px 0px;">
+                    <div class="row">
+                        <p class="text-center col-md-8 col-md-offset-2" style="font-size: medium;">
+                            Hi! Welcome to your dashboard!<br />
+                            Here you can access all the different portals of your account and start taking action
+                            about your condition.</p>
+                    <div class="row" style="padding-top: 100px;">
+                        <div class="col-md-4 col-md-offset-2">
+                            <div class="novibutton"><a href="http://www.noviqr.eu/report.php?id=<?php echo $_SESSION['email']; ?>">
+                                <img alt="" src="/img/my_report_icon.png" style="height: 70%; width: 12%; border-right: 1px solid Gray; padding: 0px 8px;" /><label class="lead" style="font-size: 1.95em; position: relative; font-weight: 600; top: 15%;line-height: 1.25em ;">&nbsp;My Initial Report</label></a></div>
+                            <div class="novibutton"><a href="http://130.206.123.31:8080/web-tester/pages/questionnaire/main/questionnaire.html?userId=1&userToken=token1&userCode=User1&telecareProgramCode=DB&questionnaireId=4">
+                                <img alt="" src="/img/my_medical_info_icon.png" style="height: 70%; width: 12%; border-right: 1px solid Gray; padding: 0px 8px;" /><label class="lead" style="font-size: 1.95em; position: relative; font-weight: 600; top: 15%;line-height: 1.25em ;">&nbsp;My Medical Information</label></a>
+                            </div>
+                            <div class="novibutton" onclick="alert('Coming soon...');">
+                                <img alt="" src="/img/complimentry_services.png" style="height: 70%; width: 12%; border-right: 1px solid Gray; padding: 0px 8px;" /><label class="lead" style="font-size: 1.95em; position: relative; font-weight: 600; top: 15%;line-height: 1.25em ;">&nbsp;Complementary Services</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="novibutton" onclick="alert('Coming soon...');">
+                                <img alt="" src="/img/My_practitioners_icon.png" style="height: 70%; width: 12%; border-right: 1px solid Gray; padding: 0px 8px;" /><label class="lead" style="font-size: 1.95em; position: relative; font-weight: 600; top: 15%;line-height: 1.25em ;">&nbsp;My Practitioners</label>
+                            </div>
+                            <div class="novibutton" onclick="alert('Coming soon...');">
+                                <img alt="" src="/img/My_future_appointments_icon.png" style="height: 70%; width: 12%; border-right: 1px solid Gray; padding: 0px 8px;" /><label class="lead" style="font-size: 1.95em; position: relative; font-weight: 600; top: 15%;line-height: 1.25em ;">&nbsp;My Future Appointments</label>
+                            </div>
+                            <div class="novibutton" onclick="alert('Coming soon...');">
+                                <img alt="" src="/img/consultation_history.png" style="height: 70%; width: 12%; border-right: 1px solid Gray; padding: 0px 8px;" /><label class="lead" style="font-size: 1.95em; position: relative; font-weight: 600; top: 15%;line-height: 1.25em ;">&nbsp;History of Appointments</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="row" style="padding: 30px 0; background-color: RGB(235,235,235);" id="regFooter">
+    <div class="row" style="padding: 15px 0; background-color: RGB(235,235,235);" id="regFooter">
         <div class="text-center col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
             <div class="row">
                 <ul style="list-style-type: none;">
-                    <a href="http://noviqr.com/#about"><li>About</li></a> 
-                    <a href="http://www.noviqr.com/FAQ"><li>FAQ</li></a> 
-                    <a href="http://www.noviqr.com/"><li>Terms Of Service</li></a> 
-                    <a href="http://www.noviqr.com/"><li>Privacy Policy</li></a> 
-                    <a href="http://noviqr.com/contact-us/"><li>Contact</li></a>
+                    <a href="http://noviqr.eu/#about"><li>About</li></a> 
+                    <a href="http://www.noviqr.eu/FAQ"><li>FAQ</li></a> 
+                    <a href="http://www.noviqr.eu/"><li>Terms Of Service</li></a> 
+                    <a href="http://www.noviqr.eu/"><li>Privacy Policy</li></a> 
+                    <a href="http://noviqr.eu/contact-us/"><li>Contact</li></a>
                 </ul>
             </div>
             <div class="row">

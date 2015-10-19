@@ -1,0 +1,27 @@
+﻿Overview:
+<div style="background-color: RGB(227, 241, 239); padding: 8px;">Hello John, <br /><br />
+We are glad to have you here and see what we can do to keep you well and improve your life! <br /><br />
+We see you are suffering from Crohn's for the past 14 years with a few flareups in the middle and no surgery so far. We see your main concern is being tired a lot and the fact that your current meds are not good for your liver. <br /><br />
+We think there is a lot that you can do to improve your life and condition! By combining some complementary and alternative treatments with your current conventional treatment, and a bit of help from you, you can overcome your tiredness, and maybe even remove some of your meds (based on a decision by a qualified Doctor). <br /><br />
+In the report below we first give you some insight regarding what other patients say of your current treatment. We then give you some conventional and alternative options to try. We highly recommend you try our suggested Integrative Team - they are the best solution for you. <br /><br />
+At this stage, we think Clinical Trials are not for you. <br /><br />
+Let's begin!</div>
+<-->
+Current Medication:
+Text: As we see you are currently taking Imuran, and some times Prednisone. Please see below what it is and more importantly - what other patients say about it.
+Medication: Prednisone, Imuran
+<-->
+Conventional Solutions:
+Text: On the conventional side, your current medication, Imuran, indicates a mid-level of Crohn's. Since Imuran is very harsh on the Liver, following a consultation with one of our Gastro Doctors (especially the one we recommend for you in the Integrative Team) and based on their professional decision, you may be able to move to the following bio-drugs which, according to patients, are better: 
+Medication: Remicade, Humira
+<-->
+Nutritional & Alternative:
+Text: Here are several alternative solution that we found appropriate for your condition:
+Option: Nutrition changes; We highly recommend that you explore a change in your nutrition based on Chinese Medicine and other principles which are most suited to your condition. We have added our suggested Macrobiotics (see here about Macrobiotics) and Herbal Chinese Medicine specialists to the recommended team for you, but you may also select one of our other practitioners. It takes a bit of adjustment, but in the end you will see that you can eat very well and many things
+Option: We believe that acupuncture can assist you in maintaining a better life;  You can read about acupuncture here. Both Chinese Medicine specialists we added to your suggested team are also an acupuncturist, and we recommend you try them.
+<-->
+Clinical Trials:
+At the current stage of your condition, we don't believe Clinical Trials are relevant to you. If one of our Conventional Doctors thinks otherwise at a later stage, we will inform you of each one that can be relevant. We will keep you updated on the cutting edge of research in Cronh's Disease. 
+<-->
+Team Of Doctors:
+Revital Kariv, MD (leader); Ravit Guri; Nir Salomon

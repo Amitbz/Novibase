@@ -54,7 +54,7 @@ div.col-md-4.doctor-thumbnails-desc p
     padding: 0px 50px;
     color:Black;
 }
-div.doctor-thumbnails-title p
+div.doctor-thumbnails-title p, #schedapp p.lead
 {
     font-size:x-large;
     color: RGB(60,60,60);
@@ -99,10 +99,6 @@ span.doc-discipline
     {
         font-size:smaller;
     }
-    #regContainer input
-    {
-        width: 150px;
-    }
 }
 .tooltip
 {
@@ -110,7 +106,7 @@ span.doc-discipline
 }
 #regContainer div.row
 {
-    margin-top:15px;
+    margin-top:10px;
 }
 #regContainer label
 {
@@ -121,7 +117,7 @@ span.doc-discipline
     box-shadow: 0 0 20px RGB(154,192,37);
     border: 3px RGB(154,192,37);
 }
-#regContainer input
+#regContainer input[text]
 {
     padding:2px;
     width: 230px;
@@ -131,6 +127,7 @@ span.doc-discipline
     display: inline;
     padding: 0 7px;
     color: RGB(154,192,37);
+    font-size: 0.8em;
 }
 #regFooter a:hover
 {
@@ -139,4 +136,49 @@ span.doc-discipline
 #navbar ul a:hover
 {
     color: RGB(154,192,37);
-}  
+}
+#input[checkbox] 
+{
+    width: 10px;
+}
+div.novibutton img, div.novibutton label
+{
+    cursor: pointer;
+}
+div.novibutton
+{
+     height: 40px;
+     width: 350px;
+     margin: 0px auto;
+     background-color: RGB(165, 208, 40);
+     border-radius: 6px;
+     padding:0px; color: white;
+     margin-bottom: 15px;
+}
+div.novibutton a
+{
+     color: White;
+}
+div.novibutton:hover
+{
+    background-color:RGB(158, 196, 28);
+}
+#nuisance 
+{
+    border-right: 2px solid RGB(110,110,110);
+}
+
+@media (max-width: 768px)
+{
+      #nuisance
+      {
+          border-right: 0px solid RGB(110,110,110);
+      }
+}
+a.navli
+{
+    border: 2px solid Green;
+}
+#blog img {
+    border-radius: 5px;
+}
